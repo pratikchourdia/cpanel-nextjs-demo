@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000/website/](http://localhost:3000/website/).
 
 ## Deploy on cPanel via Git
 
@@ -28,7 +28,7 @@ Clone URL: `https://github.com/pratikchourdia/cpanel-nextjs-demo.git`
 1. cPanel → **Software** → **Application Manager** → **Register Application**.
 2. **Application Name:** `northline` (any label is fine).
 3. **Deployment Domain:** the domain or subdomain that should serve the app.
-4. **Base Application URL:** `/` to serve at the domain root, or a subpath such as `/app`.
+4. **Base Application URL:** `/website`
 5. **Application Path:** the same folder you cloned into.
 6. **Deployment environment:** Production.
 7. Register the application.
@@ -78,4 +78,4 @@ touch tmp/restart.txt
 
 Passenger writes Node logs under `logs/` in the application directory. If the site 503s, check that `app.js` exists, `NODE_ENV` is `production`, and `.next` was produced by `npm run build`.
 
-If you register the app on a **subpath**, set `basePath` in `next.config.js` to that same path.
+If you register the app on a **subpath**, `basePath` in `next.config.js` must match it. This demo is set to `/website` for https://kjglobalfoods.com/website/.

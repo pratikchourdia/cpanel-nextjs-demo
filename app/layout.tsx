@@ -13,6 +13,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kjglobalfoods.com/website"),
   title: "Northline — Next.js on cPanel",
   description:
     "A single-page Next.js demo built to clone with Git Version Control and run in cPanel Application Manager.",
