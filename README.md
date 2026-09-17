@@ -51,6 +51,8 @@ mkdir -p tmp
 touch tmp/restart.txt
 ```
 
+Run these as the cPanel user (`kjglobalfoods`), not root. Next.js 16 defaults to Turbopack, which needs a newer glibc than most cPanel servers have. The `build` script uses Webpack instead.
+
 Visit the domain you registered. You should see the Northline landing page.
 
 If Git **Deploy** is enabled, `.cpanel.yml` runs the same install and build after each pull.
@@ -70,7 +72,7 @@ touch tmp/restart.txt
 
 - Node.js **20** (`ea-nodejs20`)
 - Phusion Passenger via Application Manager
-- `npm run build` must succeed on the server before the first request
+- `npm run build` uses Webpack (`next build --webpack`). Native Turbopack/SWC binaries need GLIBC 2.29+, which older cPanel hosts do not have.
 
 ## Logs
 

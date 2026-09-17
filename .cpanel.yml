@@ -5,5 +5,5 @@
 deployment:
   tasks:
     - /bin/mkdir -p tmp
-    - /bin/bash -c 'export PATH="/opt/cpanel/ea-nodejs20/bin:$PATH"; /opt/cpanel/ea-nodejs20/bin/npm install; /opt/cpanel/ea-nodejs20/bin/npm run build'
+    - /bin/bash -c 'export PATH="/opt/cpanel/ea-nodejs20/bin:$PATH"; export NEXT_TELEMETRY_DISABLED=1; /opt/cpanel/ea-nodejs20/bin/npm install; /opt/cpanel/ea-nodejs20/bin/npm run build'
     - /bin/touch tmp/restart.txt
