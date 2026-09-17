@@ -1,8 +1,9 @@
 ---
 # cPanel Git Version Control runs these after Deploy.
-# Register the clone in Application Manager with startup file app.js first.
+# Ensure node is on PATH; Application Manager's Ensure Dependencies often
+# fails because it calls npm by full path without node in PATH.
 deployment:
   tasks:
     - /bin/mkdir -p tmp
-    - /bin/bash -c 'export PATH="/opt/cpanel/ea-nodejs22/bin:/opt/cpanel/ea-nodejs20/bin:/opt/cpanel/ea-nodejs18/bin:$PATH"; npm install; npm run build'
+    - /bin/bash -c 'export PATH="/opt/cpanel/ea-nodejs20/bin:$PATH"; /opt/cpanel/ea-nodejs20/bin/npm install; /opt/cpanel/ea-nodejs20/bin/npm run build'
     - /bin/touch tmp/restart.txt

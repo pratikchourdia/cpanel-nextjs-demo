@@ -20,11 +20,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${outfit.variable} ${fraunces.variable} h-full antialiased`}
-    >
-      <body className="min-h-full">{children}</body>
+    <html lang="en" className={`${outfit.variable} ${fraunces.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
