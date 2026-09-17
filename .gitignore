@@ -20,6 +20,9 @@
 # production
 /build
 
+# passenger restart touch file
+tmp/restart.txt
+
 # misc
 .DS_Store
 *.pem
